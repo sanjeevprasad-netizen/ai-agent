@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ecom — AI E-Commerce Support</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="app-layout">
+    <!-- ─── Top Bar ────────────────────────────────────────── -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="brand">
+          <span class="brand-icon">⚡</span>
+          <span class="brand-name">ecom support</span>
+          <span class="brand-badge">pgvector</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button id="traceToggleBtn" class="btn btn-secondary btn-sm hidden" style="display: none;" title="Toggle Observability Trace Inspector">
+          <span>🔍</span> Trace Inspector
+        </button>
+        <div id="userBadge" class="user-badge hidden" style="display: none;" title="Current authenticated account">
+          <span class="user-icon">👤</span>
+          <span id="userName" class="user-name">-</span>
+          <span id="userRole" class="role-pill">customer</span>
+        </div>
+        <button id="loginModalBtn" class="btn btn-primary btn-sm">Sign In</button>
+        <button id="logoutBtn" class="btn btn-outline btn-sm hidden" style="display: none;">Sign Out</button>
+        <button id="themeToggleBtn" class="btn btn-icon btn-sm" title="Toggle dark/light theme">🌙</button>
+      </div>
+    </header>
+
+    <!-- ─── Main Content ───────────────────────────────────── -->
+    <div class="main-container">
+      <!-- ─── Left Sidebar ─────────────────────────────────── -->
+      <aside class="sidebar">
+        <button id="newChatBtn" class="btn btn-primary new-chat-btn">
+          <span>+</span> New Chat
+        </button>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">Recent Conversations</div>
+          <div id="sessionsList" class="sessions-list">
+            <div class="empty-state-sm">No conversations yet</div>
+          </div>
+        </div>
+
+        <!-- Admin Only Panel (Hidden for customer, visible only for admin) -->
+        <div id="adminPanel" class="admin-panel hidden" style="display: none;">
+          <div class="sidebar-title admin-title">
+            <span>🛡️ Admin Portal</span>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <span>Pending Refunds</span>
+              <span id="pendingRefundsBadge" class="badge">0</span>
+            </div>
+            <div id="pendingRefundsList" class="pending-refunds-list">
+              <div class="empty-state-sm">No refunds awaiting review</div>
+            </div>
+          </div>
+          <div class="admin-card" style="margin-top: 10px;">
+            <div class="admin-card-header">
+              <span>Vector Store (pgvector)</span>
+            </div>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">
+              Dynamically reload, chunk & re-embed all documents from policies directory.
+            </p>
+            <button id="reembedBtn" class="btn btn-secondary btn-sm" style="width: 100%;">
+              <span>🔄</span> Re-embed Policies
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ─── Center Chat Area ─────────────────────────────── -->
+      <main class="chat-viewport">
+        <!-- Chat History Stream -->
+        <div id="chatMessages" class="chat-messages">
+          <div class="welcome-hero">
+            <div class="hero-icon">🛍️</div>
+            <h2>How can I help you today?</h2>
+            <p>I can track your shipments, check catalog inventory, evaluate return windows, and process refunds
+              according to store policies.</p>
+
+            <div class="suggestions-grid">
+              <button class="suggestion-chip" data-prompt="Where is my order ORD-2024-001 and when was it delivered?">
+                📦 Track order ORD-2024-001
+              </button>
+              <button class="suggestion-chip"
+                data-prompt="Can I return the Wireless Bluetooth Headphones from order ORD-2024-001?">
+                🔄 Check return eligibility for ORD-2024-001
+              </button>
+              <button class="suggestion-chip"
+                data-prompt="Do you have any 4K webcams in stock, and how long is their warranty?">
+                🔍 Check 4K webcam stock & warranty
+              </button>
+              <button class="suggestion-chip"
+                data-prompt="What happens if a package shows delivered but I haven't received it?">
+                📋 What is your lost package policy?
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="chat-input-container">
+          <form id="chatForm" class="chat-form">
+            <div class="input-wrapper">
+              <textarea id="messageInput" placeholder="Ask about orders, returns, warranty, or catalog items..."
+                rows="1" required></textarea>
+              <button type="submit" id="sendBtn" class="send-btn" title="Send message">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+              </button>
+            </div>
+          </form>
+          <div class="input-footer">
+            <span>Scoped to authenticated customer credentials. Policies grounded via pgvector cosine similarity.</span>
+          </div>
+        </div>
+      </main>
+
+      <!-- ─── Right Drawer: Trace Inspector ────────────────── -->
+      <aside id="traceDrawer" class="trace-drawer">
+        <div class="drawer-header">
+          <div class="drawer-title">
+            <span class="pulse-dot"></span>
+            Execution Trace
+          </div>
+          <button id="closeTraceBtn" class="btn btn-icon btn-sm">✕</button>
+        </div>
+
+        <div class="drawer-content">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Total Latency</div>
+              <div id="metricLatency" class="metric-value">0 ms</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Estimated Cost</div>
+              <div id="metricCost" class="metric-value">$0.000000</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Prompt Tokens</div>
+              <div id="metricPromptTokens" class="metric-value">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Completion Tokens</div>
+              <div id="metricCompTokens" class="metric-value">0</div>
+            </div>
+          </div>
+
+          <div class="trace-meta">
+            <div class="meta-row">
+              <span class="meta-key">Trace ID:</span>
+              <span id="traceId" class="meta-val font-mono">-</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">User Details:</span>
+              <span id="traceUserDetails" class="meta-val">-</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-key">Status:</span>
+              <span id="traceStatus" class="status-badge status-success">idle</span>
+            </div>
+          </div>
+
+          <div class="steps-container">
+            <div class="steps-title">Resolution Steps Breakdown</div>
+            <div id="stepsList" class="steps-list">
+              <div class="empty-state-sm">No trace recorded for current session yet.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ─── Authentication Modal (Sign In / Sign Up) ────────── -->
+    <div id="authModal" class="modal-backdrop hidden" style="display: none;">
+      <div class="modal-card auth-card">
+        <div class="modal-header auth-modal-header">
+          <div class="auth-tabs">
+            <button id="tabSignIn" class="auth-tab active" type="button">Sign In</button>
+            <button id="tabSignUp" class="auth-tab" type="button">Create Account</button>
+          </div>
+          <button id="closeAuthModalBtn" class="btn btn-icon btn-sm" title="Close">✕</button>
+        </div>
+        <div class="modal-body auth-body">
+          <!-- Sign In Form -->
+          <form id="signInForm" class="auth-form">
+            <div class="form-group">
+              <label for="loginIdentifier">Email or User ID</label>
+              <input type="text" id="loginIdentifier" class="form-input" placeholder="e.g. alice@email.com or admin1@ecom.com" required autocomplete="username" />
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" class="form-input" placeholder="Enter password" required autocomplete="current-password" />
+            </div>
+
+            <div id="loginError" class="auth-error-msg hidden" style="display: none;"></div>
+
+            <div class="demo-hints-box">
+              <div class="demo-hints-title">💡 Seeded Demo Accounts:</div>
+              <div class="demo-hints-row">
+                <span class="demo-role customer">Customer:</span>
+                <code>alice@email.com</code> / <code>user123</code>
+              </div>
+              <div class="demo-hints-row">
+                <span class="demo-role admin">Admin:</span>
+                <code>admin1@ecom.com</code> / <code>admin123</code>
+              </div>
+            </div>
+
+            <button type="submit" id="signInSubmitBtn" class="btn btn-primary auth-submit-btn">
+              Sign In
+            </button>
+
+            <div class="auth-switch-prompt">
+              <span>Don't have an account?</span>
+              <a href="javascript:void(0)" id="goToSignUpLink">Sign up here</a>
+            </div>
+          </form>
+
+          <!-- Sign Up Form -->
+          <form id="signUpForm" class="auth-form hidden" style="display: none;">
+            <div class="form-group">
+              <label for="signupName">User ID / Full Name</label>
+              <input type="text" id="signupName" class="form-input" placeholder="e.g. Charlie Brown or charlie_01" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input type="email" id="signupEmail" class="form-input" placeholder="name@example.com" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" class="form-input" placeholder="Minimum 6 characters" minlength="6" required autocomplete="new-password" />
+            </div>
+
+            <div class="form-group">
+              <label for="signupRole">Account Role</label>
+              <select id="signupRole" class="form-input">
+                <option value="customer" selected>Customer (Order Scoped)</option>
+                <option value="admin">Administrator (Admin Portal & Full ERP)</option>
+              </select>
+            </div>
+
+            <div id="signUpError" class="auth-error-msg hidden" style="display: none;"></div>
+
+            <button type="submit" id="signUpSubmitBtn" class="btn btn-primary auth-submit-btn">
+              Create Account
+            </button>
+
+            <div class="auth-switch-prompt">
+              <span>Already have an account?</span>
+              <a href="javascript:void(0)" id="goToSignInLink">Sign in here</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+
+</html>

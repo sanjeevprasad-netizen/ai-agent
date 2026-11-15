@@ -1,0 +1,32 @@
+# Environment (contains API keys)
+.env
+*.env
+
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Agent skills cache
+.agents/
+
+# Build output
+dist/
+
+# Database
+*.db
+pgdata/
+
+# Python
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# OS
+.DS_Store
+
+.claude
+
+# Dataset
+Kaggle dataset archive/
+

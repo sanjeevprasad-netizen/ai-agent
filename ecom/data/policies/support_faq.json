@@ -1,0 +1,48 @@
+[
+  {
+    "id": "FAQ-001",
+    "category": "returns",
+    "question": "Can I return an item without original receipt or order number?",
+    "answer": "If you do not have an order number or receipt, our customer support team can look up your purchase using the email address or phone number used during checkout. Returns without proof of purchase can only be redeemed for current lowest-sale-price store credit.",
+    "format": "json",
+    "source": "support_faq.json",
+    "tags": ["return", "receipt", "order_id", "proof_of_purchase"]
+  },
+  {
+    "id": "FAQ-002",
+    "category": "shipping",
+    "question": "What happens if a package is marked delivered but was not received?",
+    "answer": "We ask customers to wait 24 hours after a 'Delivered' carrier scan, as carriers occasionally scan ahead. Check surrounding porches, parcel lockers, and with neighbors. If not located within 24 hours, contact support to initiate a carrier lost package investigation and dispatch a free replacement or full refund.",
+    "format": "json",
+    "source": "support_faq.json",
+    "tags": ["lost_package", "carrier", "delivered", "stolen", "replacement"]
+  },
+  {
+    "id": "FAQ-003",
+    "category": "warranty",
+    "question": "Does warranty cover accidental physical damage or water spills?",
+    "answer": "Standard manufacturer warranties cover manufacturing defects, hardware failure, and component malfunction under normal use. They do NOT cover accidental drops, liquid immersion, cosmetic scratches, unauthorized repair attempts, or theft. Extended accidental damage protection must be purchased separately at checkout.",
+    "format": "json",
+    "source": "support_faq.json",
+    "tags": ["warranty", "accidental_damage", "water_damage", "exclusion"]
+  },
+  {
+    "id": "FAQ-004",
+    "category": "orders",
+    "question": "Can I change my shipping address or cancel after placing an order?",
+    "answer": "Orders can be modified or cancelled within 45 minutes of placement while in 'pending' status. Once status changes to 'processing' or 'shipped', the warehouse packing system is locked and address modifications cannot be completed until the carrier attempts initial delivery.",
+    "format": "json",
+    "source": "support_faq.json",
+    "tags": ["cancel", "address_change", "pending", "modification"]
+  },
+  {
+    "id": "FAQ-005",
+    "category": "compensation",
+    "question": "What compensation is provided if I receive a defective or damaged product?",
+    "answer": "For defective or damaged items, we provide a 100% free return shipping label, an immediate replacement dispatched with expedited 2-day delivery, and a $15 inconvenience store coupon valid for 1 year.",
+    "format": "json",
+    "source": "support_faq.json",
+    "tags": ["defective", "damaged", "compensation", "coupon", "replacement"]
+  }
+]
+

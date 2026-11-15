@@ -1,0 +1,402 @@
+[
+  {
+    "id": "Q01",
+    "domain": "Returns",
+    "query": "What is the return window for electronics and laptops?",
+    "expected_keywords": ["electronics", "15 days", "return", "refund"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q02",
+    "domain": "Returns",
+    "query": "What restocking fee percentage is charged for returning opened electronics?",
+    "expected_keywords": ["electronics", "15%", "restocking fee", "opened"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q03",
+    "domain": "Returns",
+    "query": "Can I return shoes if they have been worn outdoors on pavement?",
+    "expected_keywords": ["shoes", "outdoors", "clean indoor surface", "30 days"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q04",
+    "domain": "Returns",
+    "query": "Can I exchange unworn denim trousers if the waist sizing is uncomfortable?",
+    "expected_keywords": ["clothing", "30 days", "unworn", "tags"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q05",
+    "domain": "Returns",
+    "query": "Can assembled lounge furnishings or living room tables be sent back if intact?",
+    "expected_keywords": ["furniture", "assembled", "home and garden", "30 days"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q06",
+    "domain": "Returns",
+    "query": "If an unboxed kitchen blender or appliance was opened can I exchange it for another unit?",
+    "expected_keywords": ["appliances", "opened", "exchange", "unopened"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q07",
+    "domain": "Returns",
+    "query": "prepaid return shipping label fee of $7.99 deducted from refund",
+    "expected_keywords": ["prepaid", "label", "$7.99", "deducted"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q08",
+    "domain": "Returns",
+    "query": "books highlighting writing damage not eligible",
+    "expected_keywords": ["books", "highlighting", "writing", "damage"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q09",
+    "domain": "Returns",
+    "query": "Are custom engraved items, swimwear, or monogrammed goods eligible for exchange?",
+    "expected_keywords": ["swimwear", "personalized", "final sale", "non-refundable"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q10",
+    "domain": "Returns",
+    "query": "Does wholesale procurement of bulk orders 10+ units require managerial authorization for returns?",
+    "expected_keywords": ["bulk orders", "10+ units", "manager approval"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q11",
+    "domain": "Returns",
+    "query": "What is the return window for items bought during promotional clearance sales?",
+    "expected_keywords": ["clearance events", "14-day", "shortened", "return window"],
+    "expected_source": "returns_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q12",
+    "domain": "Refunds",
+    "query": "What discount code is issued if standard shipping arrives 1 to 3 days late?",
+    "expected_keywords": ["standard", "1-3 days", "10%", "discount code"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q13",
+    "domain": "Refunds",
+    "query": "What compensation and shipping perk is given for standard delivery 4 to 7 days late?",
+    "expected_keywords": ["4-7 days", "15%", "free standard shipping", "discount code"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q14",
+    "domain": "Refunds",
+    "query": "What compensation is given for delivered 8+ days late 25% discount code free express?",
+    "expected_keywords": ["8+ days", "25%", "discount code", "free express"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q15",
+    "domain": "Refunds",
+    "query": "What happens if a shipment is not delivered within 14 days of estimated date?",
+    "expected_keywords": ["14 days", "full refund", "free replacement"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q16",
+    "domain": "Refunds",
+    "query": "How is express shipping compensated when delivered 1 day late?",
+    "expected_keywords": ["express", "1 day late", "shipping cost difference"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q17",
+    "domain": "Refunds",
+    "query": "What compensation applies if express delivery arrives 2 or more days late?",
+    "expected_keywords": ["express", "2+ days late", "full refund", "10% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q18",
+    "domain": "Refunds",
+    "query": "What refund and discount code are given when overnight shipping is 1 day late?",
+    "expected_keywords": ["overnight", "1 day late", "shipping cost", "15% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q19",
+    "domain": "Refunds",
+    "query": "What discount is offered on replacement purchase for an item defective outside warranty?",
+    "expected_keywords": ["defective", "outside warranty", "30% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q20",
+    "domain": "Refunds",
+    "query": "What compensation is provided if the warehouse sent the wrong size or color due to our error?",
+    "expected_keywords": ["wrong item", "our error", "express shipping", "10% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q21",
+    "domain": "Refunds",
+    "query": "How are repeat VIP buyers compensated when facing fulfillment blunders?",
+    "expected_keywords": ["loyalty", "5+ orders", "10+ orders", "double compensation"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q22",
+    "domain": "Refunds",
+    "query": "What compensation is offered if a website glitch causes an incorrect billing overcharge?",
+    "expected_keywords": ["website error", "incorrect charge", "immediate refund", "10% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q23",
+    "domain": "Refunds",
+    "query": "What discount code is issued if customer service response time exceeds 24 hours?",
+    "expected_keywords": ["response time", "24 hours", "10% discount"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q24",
+    "domain": "Refunds",
+    "query": "What compensation is awarded for multiple failed delivery attempts caused by store error?",
+    "expected_keywords": ["failed delivery attempts", "20%", "free shipping", "3 orders"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q25",
+    "domain": "Refunds",
+    "query": "discount codes valid 90 days maximum discount capped at $100",
+    "expected_keywords": ["discount codes", "90 days", "$100", "capped"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q26",
+    "domain": "Refunds",
+    "query": "Can senior support agents grant refunds up to 50% without manager escalation?",
+    "expected_keywords": ["escalation", "senior agents", "50% refund", "manager approval"],
+    "expected_source": "compensation_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q27",
+    "domain": "Shipping",
+    "query": "What is the delivery timeline for standard shipping and the free shipping order threshold?",
+    "expected_keywords": ["standard shipping", "$5.99", "$50", "5-7 business days"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q28",
+    "domain": "Shipping",
+    "query": "What is the cost and delivery timeframe for express shipping?",
+    "expected_keywords": ["express shipping", "$12.99", "2-3 business days"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q29",
+    "domain": "Shipping",
+    "query": "Can rapid overnight courier delivery be sent to military field posts or PO Boxes?",
+    "expected_keywords": ["overnight shipping", "$24.99", "2 PM EST", "PO Boxes", "APO/FPO"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q30",
+    "domain": "Shipping",
+    "query": "What is the daily cutoff time for same business day order processing on weekdays?",
+    "expected_keywords": ["order processing", "2 PM EST", "same business day", "Monday through Friday"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q31",
+    "domain": "Shipping",
+    "query": "Why is my package taking an extra two days to pack during Christmas sales?",
+    "expected_keywords": ["peak seasons", "Black Friday", "December 31", "1-2 business days"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q32",
+    "domain": "Shipping",
+    "query": "Do you offer international shipping outside of the 50 US states and territories?",
+    "expected_keywords": ["international shipping", "50 US states", "territories", "not available"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q33",
+    "domain": "Shipping",
+    "query": "lithium batteries shipped alone aerosols shipping restrictions",
+    "expected_keywords": ["hazardous materials", "lithium batteries", "aerosols", "restrictions"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q34",
+    "domain": "Shipping",
+    "query": "oversized items over 70 lbs 130 inches freight shipping additional cost",
+    "expected_keywords": ["oversized items", "70 lbs", "130 inches", "freight shipping"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q35",
+    "domain": "Shipping",
+    "query": "The outer packaging arrived completely crushed and punctured by the postal courier",
+    "expected_keywords": ["damaged in transit", "photos", "72 hours", "replacement"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q36",
+    "domain": "Shipping",
+    "query": "December 14 cutoff date for Christmas standard transit",
+    "expected_keywords": ["holiday shipping", "December 14th", "December 20th", "December 25th"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q37",
+    "domain": "Shipping",
+    "query": "How quickly do I get a carrier tracking number after my order is dispatched?",
+    "expected_keywords": ["tracking", "email", "24 hours", "carrier name"],
+    "expected_source": "shipping_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q38",
+    "domain": "Product Information",
+    "query": "What duration of factory coverage applies to consumer computing equipment and electronics?",
+    "expected_keywords": ["electronics", "12 months", "manufacturing defects", "wear and tear"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q39",
+    "domain": "Product Information",
+    "query": "What is the warranty coverage duration for SSDs and portable storage hard drives?",
+    "expected_keywords": ["portable storage", "SSDs", "hard drives", "36 months", "drive failures"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q40",
+    "domain": "Product Information",
+    "query": "How many months of warranty coverage protect electrical components in home appliances?",
+    "expected_keywords": ["home appliances", "12 months", "motor failures", "electrical"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q41",
+    "domain": "Product Information",
+    "query": "Does the 5-year warranty on cookware cover non-stick coating peeling and pan warping?",
+    "expected_keywords": ["cookware", "60 months", "5 years", "warping", "non-stick coating"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q42",
+    "domain": "Product Information",
+    "query": "What is the warranty period for clothing and shoes regarding zipper defects or seam failures?",
+    "expected_keywords": ["clothing", "footwear", "6 months", "seam failures", "zipper defects"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q43",
+    "domain": "Product Information",
+    "query": "How long is sports equipment covered under manufacturer warranty for structural failure?",
+    "expected_keywords": ["sports equipment", "12-24 months", "structural failures"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q44",
+    "domain": "Product Information",
+    "query": "What information and photo evidence must be submitted when filing a warranty claim?",
+    "expected_keywords": ["warranty claim", "order number", "photos", "2 business days"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q45",
+    "domain": "Product Information",
+    "query": "extended warranty pricing 12-month 10% 24-month 18% 48-month 30% appliances",
+    "expected_keywords": ["extended warranty", "10%", "18%", "30%", "accidental damage"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q46",
+    "domain": "Product Information",
+    "query": "Can warranty service be claimed by someone who received the item as a gift?",
+    "expected_keywords": ["warranty transfers", "non-transferable", "gift", "order number"],
+    "expected_source": "warranty_policy.md",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q47",
+    "domain": "Returns",
+    "query": "Can customer service locate a past transaction using just my contact phone or email?",
+    "expected_keywords": ["FAQ-001", "proof of purchase", "email", "phone number", "store credit"],
+    "expected_source": "support_faq.json",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q48",
+    "domain": "Shipping",
+    "query": "What steps should be followed if courier tracking shows delivered but parcel was not received?",
+    "expected_keywords": ["FAQ-002", "wait 24 hours", "carrier lost package", "replacement"],
+    "expected_source": "support_faq.json",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q49",
+    "domain": "Product Information",
+    "query": "Does standard manufacturer warranty cover accidental water spills or drop damage?",
+    "expected_keywords": ["FAQ-003", "accidental drops", "liquid immersion", "water spills"],
+    "expected_source": "support_faq.json",
+    "order_date": "2024-06-01"
+  },
+  {
+    "id": "Q50",
+    "domain": "Orders",
+    "query": "Can I cancel or modify my delivery address within 45 minutes of placing an order?",
+    "expected_keywords": ["FAQ-004", "45 minutes", "pending status", "warehouse packing"],
+    "expected_source": "support_faq.json",
+    "order_date": "2024-06-01"
+  }
+]

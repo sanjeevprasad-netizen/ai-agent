@@ -1,0 +1,30 @@
+[
+  {
+    "pipeline": "Dense Vector Only",
+    "queries_count": 50,
+    "hit_at_3_pct": 98.0,
+    "mrr_at_3": 0.9267,
+    "avg_latency_ms": 66.72
+  },
+  {
+    "pipeline": "Sparse (BM25) Only",
+    "queries_count": 50,
+    "hit_at_3_pct": 98.0,
+    "mrr_at_3": 0.9033,
+    "avg_latency_ms": 12.88
+  },
+  {
+    "pipeline": "Hybrid (Dense + Sparse RRF)",
+    "queries_count": 50,
+    "hit_at_3_pct": 100.0,
+    "mrr_at_3": 0.95,
+    "avg_latency_ms": 43.83
+  },
+  {
+    "pipeline": "Hybrid + Cross-Encoder Reranking",
+    "queries_count": 50,
+    "hit_at_3_pct": 100.0,
+    "mrr_at_3": 0.99,
+    "avg_latency_ms": 471.44
+  }
+]
